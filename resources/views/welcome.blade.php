@@ -41,11 +41,10 @@
                     </div>
                 </div>
                 
-                @auth
+                @guest()
                     <div class="shadow-2xl shadow-gray-500/20 mt-10 p-6 bg-white dark:bg-gray-700/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent rounded-lg motion-safe:hover:scale-[1.01] transition-all duration-250">
                         <form action="#" method="post">
-                            @csrf
-                           
+                            @csrf                           
                             <div class="w-full mb-2">
                                 <label for="email" class="mb-2 block text-gray-600 font-bold">Email</label>
                                 <input class="w-full border border-indigo-500 rounded p-2" type="text" name="email" id="email" placeholder="Nombre y apellidos">
@@ -55,33 +54,16 @@
                                 <input class="w-full border border-indigo-500 rounded p-2" type="text" name="password" id="password">
                             </div>
                             
-                            <input type="submit" value="Iniciar sesión" class="mt-2 p-2 border border-indigo-600 bg-indigo-200 rounded">
+                            <input 
+                                type="submit" 
+                                value="Iniciar sesión" 
+                                class="mt-2 p-2 border border-indigo-600 bg-indigo-200 rounded w-full mb-4">
                         </form>
+                        <p class="mb-2">No registrado? Puedes registrarte aquí </p>
+                        <a href="{{route('register.create')}}" class="p-2 border border-green-600 bg-green-200 rounded flex text-center">Registrarse</a>
                     </div>
-                @else
-                    <div class="shadow-2xl shadow-gray-500/20 mt-10 p-6 bg-white dark:bg-gray-700/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent rounded-lg motion-safe:hover:scale-[1.01] transition-all duration-250">
-                        <form action="#" method="post">
-                            @csrf
-                            <div class="w-full mb-2">
-                                <label for="name" class="mb-2 block text-gray-600 font-bold">Nombre y apellidos</label>
-                                <input class="w-full border border-indigo-500 rounded p-2" type="text" name="name" id="name" placeholder="Nombre y apellidos">
-                            </div>
-                            <div class="w-full mb-2">
-                                <label for="email" class="mb-2 block text-gray-600 font-bold">Email</label>
-                                <input class="w-full border border-indigo-500 rounded p-2" type="text" name="email" id="email" placeholder="Nombre y apellidos">
-                            </div>
-                            <div class="w-full mb-2">
-                                <label for="password" class="mb-2 block text-gray-600 font-bold">Contraseña</label>
-                                <input class="w-full border border-indigo-500 rounded p-2" type="text" name="password" id="password">
-                            </div>
-                            <div class="w-full mb-2">
-                                <label for="password_confirmation" class="mb-2 block text-gray-600 font-bold">Repetir contraseña</label>
-                                <input class="w-full border border-indigo-500 rounded p-2" type="pass" name="password_confirmation" id="password_confirmation">
-                            </div>
-                            <input type="submit" value="Registrar" class="cursor-pointer w-full mt-2 p-2 border border-indigo-600 bg-indigo-200 rounded">
-                        </form>
-                    </div>
-                @endauth
+                    
+                @endguest
             </div>
         </div>
     </body>
