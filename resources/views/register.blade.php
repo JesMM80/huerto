@@ -48,14 +48,23 @@
                         <div class="w-full mb-2">
                             <label for="email" class="mb-2 block text-gray-600 font-bold">Email</label>
                             <input class="w-full border border-indigo-500 rounded p-2" type="text" name="email" id="email" placeholder="Nombre y apellidos">
+                            @error('email')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                            @enderror
                         </div>
                         <div class="w-full mb-2">
                             <label for="password" class="mb-2 block text-gray-600 font-bold">Contraseña</label>
                             <input class="w-full border border-indigo-500 rounded p-2" type="password" name="password" id="password">
+                            @error('password')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                            @enderror
                         </div>
                         <div class="w-full mb-2">
                             <label for="password_confirmation" class="mb-2 block text-gray-600 font-bold">Repetir contraseña</label>
                             <input class="w-full border border-indigo-500 rounded p-2" type="password" name="password_confirmation" id="password_confirmation">
+                            @error('password_confirmation')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                            @enderror
                         </div>
                         <input type="submit" value="Registrar" class="cursor-pointer w-full mt-2 p-2 border border-indigo-600 bg-indigo-200 rounded">
                     </form>
