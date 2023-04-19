@@ -26,3 +26,6 @@ Route::post('/logout',[LogoutController::class,'store'])->name('logout');
 Route::get('/register',[RegisterController::class,'create'])->name('register.create');
 Route::post('/register',[RegisterController::class,'store'])->name('register.store');
 
+Route::get('/principal',function(){
+    return view('principal');
+})->name('principal');

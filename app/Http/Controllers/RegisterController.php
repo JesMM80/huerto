@@ -29,7 +29,7 @@ class RegisterController extends Controller
         auth()->attempt($request->only('email','password'));
 
         // Redireccionamos al usuario a la pantalla principal
-        return to_route('login')->with('message', 'Usuario registrado!');
+        return to_route('principal')->with('message', 'Usuario registrado!');
 
 
     }
