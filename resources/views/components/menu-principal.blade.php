@@ -7,10 +7,10 @@
         <a href="{{ route('principal') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
             Inicio
         </a>
-        <a href="" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-            Productos
+        <a href="{{ route('hortalizas.index') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+            Hortalizas
         </a>
-        <a href="" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+        <a href="{{ route('familias.index') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
             Familias
         </a>        
         <form action="{{ route('logout') }}" method="POST" class="absolute right-5">

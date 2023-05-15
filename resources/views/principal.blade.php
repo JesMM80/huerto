@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>AppHuerto</title>
         @vite('resources/css/app.css')
     </head>
     
@@ -19,14 +19,14 @@
             </div>
         @endif
 
-        <main class="container mx-auto mt-10">
-            Cuerpo principal
+        <main class="container mx-auto mt-5">
+            <h2 class="text-center font-black text-2xl mb-5">@yield('titulo')</h2>
+            @yield('contenido')
         </main>
 
-        <footer class="mt-10 text-center p-4 text-gray-500 font-bold">
+        <footer class="mt-5 text-center p-4 text-gray-500 font-bold">
             App Huerto {{now()->year}}
         </footer>
                 
-
     </body>
 </html>

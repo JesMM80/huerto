@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FamilyController;
+use App\Http\Controllers\HortalizaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
@@ -29,3 +31,15 @@ Route::post('/register',[RegisterController::class,'store'])->name('register.sto
 Route::get('/principal',function(){
     return view('principal');
 })->name('principal');
+
+Route::get('/familias',[FamilyController::class,'index'])->name('familias.index');
+Route::get('/familias/create',[FamilyController::class,'create'])->name('familias.create');
+Route::post('/familias/store',[FamilyController::class,'store'])->name('familias.store');
+Route::delete('/familias/{id}',[FamilyController::class,'destroy'])->name('familias.destroy');
+Route::get('/familias/{familia}/edit',[FamilyController::class,'edit'])->name('familias.edit');
+Route::put('/familias/{familia}',[FamilyController::class,'update'])->name('familias.update');
+
+Route::get('/hortalizas',[HortalizaController::class,'index'])->name('hortalizas.index');
+Route::delete('/hortalizas/{id}',[HortalizaController::class,'destroy'])->name('hortalizas.destroy');
+Route::get('/hortalizas/{hortaliza}/edit',[HortalizaController::class,'edit'])->name('hortalizas.edit');
+Route::put('/hortalizas/{hortaliza}',[HortalizaController::class,'update'])->name('hortalizas.update');
