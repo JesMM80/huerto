@@ -22,7 +22,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
                         </svg>
                     @else
-                        <img src="" alt="img familia">
+                        <img src="{{asset("uploads"). "/" . $familia->imagen }}" alt="img familia">
                     @endif
                 </div>
                 <div class="w-full">

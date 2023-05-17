@@ -43,3 +43,5 @@ Route::get('/hortalizas',[HortalizaController::class,'index'])->name('hortalizas
 Route::delete('/hortalizas/{id}',[HortalizaController::class,'destroy'])->name('hortalizas.destroy');
 Route::get('/hortalizas/{hortaliza}/edit',[HortalizaController::class,'edit'])->name('hortalizas.edit');
 Route::put('/hortalizas/{hortaliza}',[HortalizaController::class,'update'])->name('hortalizas.update');
+Route::get('/hortalizas/create',[HortalizaController::class,'create'])->name('hortalizas.create');
+Route::post('/hortalizas',[HortalizaController::class,'store'])->name('hortalizas.store');

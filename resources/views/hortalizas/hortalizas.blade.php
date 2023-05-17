@@ -7,7 +7,7 @@
 @section('contenido')
     <div class="w-full bg-slate-100 border-b border-gray-500">
         <nav class="mb-1">
-            <a href="" class="px-2 py-1 border border-indigo-500 bg-indigo-200 rounded hover:bg-indigo-300">Insertar hortaliza</a>
+            <a href="{{ route('hortalizas.create') }}" class="px-2 py-1 border border-indigo-500 bg-indigo-200 rounded hover:bg-indigo-300">Insertar hortaliza</a>
             <a href="{{ route('hortalizas.index') }}" class="px-2 py-1 border border-indigo-500 bg-indigo-200 rounded hover:bg-indigo-300">Listar hortalizas</a>
         </nav>
 
@@ -22,7 +22,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
                         </svg>
                     @else
-                        <img src="" alt="img hortaliza">
+                        <img src="{{ asset("uploads") . "/" . $hortaliza->imagen }}" 
+                            alt="img hortaliza"
+                            class="w-14 h-14">
                     @endif
                 </div>
                 <div class="w-full">

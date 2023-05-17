@@ -1,7 +1,7 @@
 @extends('principal')
 
 @section('titulo')
-    Editar hortaliza: <span class="text-lg text-green-500">{{$hortaliza->nombre}}</span> 
+    Ver/Editar hortaliza: <span class="text-lg text-green-500">{{$hortaliza->nombre}}</span> 
 @endsection
 
 @section('contenido')
@@ -18,11 +18,12 @@
             @endif
             
             <div class="shadow-2xl shadow-gray-500/20 p-6 bg-white dark:bg-gray-700/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent rounded-lg motion-safe:hover:scale-[1.01] transition-all duration-250">
-                <form action="{{ route('hortalizas.update',$hortaliza) }}" method="POST">
+                <form action="{{ route('hortalizas.update',$hortaliza) }}" method="POST" enctype="multipart/form-data">
                     @csrf  
                     @method('PUT')
+
                     <div class="w-full mb-2">
-                        <label for="nombre" class="mb-2 block text-gray-600 font-bold">
+                        <label for="descripcion" class="mb-2 block text-gray-600 font-bold">
                             Descripción
                         </label>
                         <input 
@@ -37,7 +38,7 @@
                     </div>
 
                     <div class="w-full mb-2">
-                        <label for="descripcion" class="mb-2 block text-gray-600 font-bold">
+                        <label for="variedad" class="mb-2 block text-gray-600 font-bold">
                             Variedad de la hortaliza
                         </label>
                         <input 
@@ -52,22 +53,18 @@
                     </div>
                     <div class="grid grid-cols-3 gap-1">
                         <div class="w-full mb-2">
-                            <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                            <label for="familia" class="mb-2 block text-gray-600 font-bold">
                                 Familia
                             </label>
-                            <input 
-                                class="w-full border border-indigo-500 rounded p-2" 
-                                type="text" 
-                                name="familia" 
-                                value="{{old('familia',$hortaliza->familia)}}" 
-                                placeholder="Descripción de la hortaliza">
-                            @error('familia')
-                                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
-                            @enderror
+                            <select name="familia" class="w-full border border-indigo-500 rounded p-2">
+                                @foreach ($familias as $familia)
+                                    <option value="{{ $familia->nombre }}" @selected($familia->nombre == $hortaliza->familia)>{{ $familia->nombre }}</option>                                    
+                                @endforeach
+                            </select>
                         </div>
     
                         <div class="w-full mb-2">
-                            <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                            <label for="epoca_siembra" class="mb-2 block text-gray-600 font-bold">
                                 Época de siembra
                             </label>
                             <input 
@@ -82,7 +79,7 @@
                         </div>
     
                         <div class="w-full mb-2">
-                            <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                            <label for="tiempo_germ" class="mb-2 block text-gray-600 font-bold">
                                 Tiempo germinación
                             </label>
                             <input 
@@ -99,7 +96,7 @@
                     <div class="grid grid-cols-3 gap-1">
 
                         <div class="w-full mb-2">
-                            <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                            <label for="riego" class="mb-2 block text-gray-600 font-bold">
                                 Cantidad de riego
                             </label>
                             <input 
@@ -114,7 +111,7 @@
                         </div>
     
                         <div class="w-full mb-2">
-                            <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                            <label for="temperatura_hsol" class="mb-2 block text-gray-600 font-bold">
                                 Temperaturas y horas de sol
                             </label>
                             <input 
@@ -129,7 +126,7 @@
                         </div>
                             
                         <div class="w-full mb-2">
-                            <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                            <label for="separacion" class="mb-2 block text-gray-600 font-bold">
                                 Separación entre plantas
                             </label>
                             <input 
@@ -145,7 +142,7 @@
                     </div>
 
                     <div class="w-full mb-2">
-                        <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                        <label for="abonos" class="mb-2 block text-gray-600 font-bold">
                             Abonos
                         </label>
                         <input 
@@ -160,7 +157,7 @@
                     </div>
 
                     <div class="w-full mb-2">
-                        <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                        <label for="tratamiento" class="mb-2 block text-gray-600 font-bold">
                             Tratamientos contra insectos
                         </label>
                         <input 
@@ -175,7 +172,7 @@
                     </div>
 
                     <div class="w-full mb-2">
-                        <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                        <label for="asociaciones" class="mb-2 block text-gray-600 font-bold">
                             Asociaciones con otras plantas
                         </label>
                         <input 
@@ -190,15 +187,20 @@
                     </div>
 
                     <div class="w-full mb-2">
-                        <label for="necesidades" class="mb-2 block text-gray-600 font-bold">
+                        <label for="imagen" class="mb-2 block text-gray-600 font-bold">
                             Hortaliza
                         </label>
+
+                        <input type="file" id="imagen" name="imagen" class="block mt-1 w-full">
 
                         @if ($hortaliza->imagen == '')
                             <img src="{{ asset("images/logo_huerto.svg") }}" alt="hortaliza" class="h-28 w w-28 ">
                         @else
-                            
+                            <img src="{{ asset("uploads") ."/". $hortaliza->imagen }}" 
+                                alt="hortaliza" 
+                                class=" w-80 h-80 mt-5 border-4">
                         @endif
+
                     </div>
                     
                     <div class="grid grid-cols-2 place-items-center">
