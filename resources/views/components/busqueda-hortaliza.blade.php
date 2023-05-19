@@ -1,3 +1,19 @@
-<div>
-    <!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
+<div class="w-full text-center bg-green-100">
+    <div class="text-lg bold">
+        Búsquedas
+    </div>
+</div>
+<div class="w-full grid grid-cols-3 text-center bg-green-100 mb-5 p-2 gap-4">
+    <div>
+        <label for="descripcion">Descripción</label>
+        <input type="text" name="descripcion" class="w-full border border-indigo-500 rounded p-1">
+    </div>
+    <div>
+        <label for="descripcion">Variedad</label>
+        <input type="text" name="variedad" class="w-full border border-indigo-500 rounded p-1">
+    </div>
+    <div>
+        <label for="descripcion">Familia</label>
+        <input type="text" name="familia" class="w-full border border-indigo-500 rounded p-1">
+    </div>
 </div>

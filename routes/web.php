@@ -5,6 +5,7 @@ use App\Http\Controllers\HortalizaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SiembraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,3 +46,6 @@ Route::get('/hortalizas/{hortaliza}/edit',[HortalizaController::class,'edit'])->
 Route::put('/hortalizas/{hortaliza}',[HortalizaController::class,'update'])->name('hortalizas.update');
 Route::get('/hortalizas/create',[HortalizaController::class,'create'])->name('hortalizas.create');
 Route::post('/hortalizas',[HortalizaController::class,'store'])->name('hortalizas.store');
+
+Route::get('/siembra',[SiembraController::class,'create'])->name('siembra.create');
+Route::post('/siembra',[SiembraController::class,'store'])->name('siembra.store');

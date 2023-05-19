@@ -27,4 +27,8 @@ class Hortaliza extends Model
     public function families(){
         return $this->belongsTo(Family::class);
     }
+
+    public function siembra(){
+        return $this->hasMany(Siembra::class);
+    }
 }

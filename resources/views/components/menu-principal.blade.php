@@ -12,7 +12,14 @@
         </a>
         <a href="{{ route('familias.index') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
             Familias
-        </a>        
+        </a>
+
+        @if (auth()->user()->name == 'Jesus')
+            <div class="ml-10 text-green-700">
+                Hola {{auth()->user()->name}}!
+            </div>                
+        @endif
+        
         <form action="{{ route('logout') }}" method="POST" class="absolute right-5">
             @csrf
             <button class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ml-2">
