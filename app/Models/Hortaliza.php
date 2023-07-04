@@ -12,7 +12,8 @@ class Hortaliza extends Model
     protected $fillable = [
         'descripcion',
         'variedad',
-        'familia',
+        'family_id',
+        'sembrado',
         'epoca_siembra',
         'tiempo_germ',
         'separacion',
@@ -24,11 +25,15 @@ class Hortaliza extends Model
         'imagen',
     ];
 
-    public function families(){
+    public function family(){
         return $this->belongsTo(Family::class);
     }
 
-    public function siembra(){
+    public function siembras(){
         return $this->hasMany(Siembra::class);
+    }
+
+    public function zonas(){
+        return $this->hasMany(HortalizaZona::class);
     }
 }

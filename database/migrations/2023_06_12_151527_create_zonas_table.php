@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('siembras', function (Blueprint $table) {
-            $table->foreignId('hortaliza_id')->after('cantidad')->constrained()->onDelete('cascade');
+        Schema::create('zonas', function (Blueprint $table) {
+            $table->id();
+            $table->string('lugar');
+            $table->foreignId('hortaliza_id');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('siembras', function (Blueprint $table) {
-            $table->dropColumn('hortaliza_id');
-        });
+        Schema::dropIfExists('zonas');
     }
 };

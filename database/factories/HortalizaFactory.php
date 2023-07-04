@@ -19,7 +19,8 @@ class HortalizaFactory extends Factory
         return [
             'descripcion' => fake()->name(),
             'variedad' => fake()->name(),
-            'familia' => fake()->randomElement(['Crucíferas','Cucurbitáceas','Liliáceas']),
+            'family_id' => fake()->randomElement([1,2,3,4]),
+            'sembrado' => fake()->randomElement([1,2]),
             'epoca_siembra' => fake()->date(),
             'tiempo_germ' => fake()->randomDigit(),
             'separacion' => fake()->randomDigit(),

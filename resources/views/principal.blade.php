@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>AppHuerto</title>
         @vite('resources/css/app.css')
+        @livewireStyles
     </head>
     
     <body class="antialiased">
@@ -27,6 +28,8 @@
         <footer class="mt-5 text-center p-4 text-gray-500 font-bold">
             App Huerto {{now()->year}}
         </footer>
-                
+        
+        @livewireScripts
+        @stack('sweetAlertScript')
     </body>
 </html>

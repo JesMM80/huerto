@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siembras', function (Blueprint $table) {
-            $table->id();
-            $table->date('fecha');
-            $table->integer('cantidad');
-            $table->foreignId('hortaliza_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
+        Schema::table('families', function (Blueprint $table) {
+            $table->string('imagen')->nullable()->change();
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('siembras');
+        Schema::table('families', function (Blueprint $table) {
+            $table->string('imagen')->change();
+        });
     }
 };

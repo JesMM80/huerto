@@ -19,6 +19,10 @@ class FamilyController extends Controller
     }
 
     public function create(){
+        $user = auth()->user()->id;
+        // dd(auth()->user());
+        $this->authorize('create',Family::class);
+
         return view('familias.create');
     }
 
@@ -37,13 +41,6 @@ class FamilyController extends Controller
         ]);
 
         return to_route('familias.index')->with('message','La familia se guardó correctamente!');
-    }
-
-    public function destroy(Family $id){
-
-        $id->delete();
-
-        return to_route('familias.index')->with('message','Familia borrada!');
     }
 
     public function edit (Family $familia){

@@ -6,6 +6,7 @@ use App\Models\Family;
 use App\Models\Hortaliza;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
@@ -18,7 +19,13 @@ class HortalizaController extends Controller
     public function index(){
 
         $hortalizas = Hortaliza::orderBy('descripcion', 'asc')->paginate(15);
-
+        // $hortalizas = Hortaliza::all();
+        // $hortalizas = DB::table('hortalizas')->get();
+        // $hortalizas = Hortaliza::hydrate($hortalizas->toArray());
+        // dd($hortalizas);
+        // foreach ($hortalizas as $hortaliza) {
+        //     echo $hortaliza->descripcion.'<br>';
+        // }
         return view('hortalizas.hortalizas',['hortalizas' => $hortalizas]);
     }
 
@@ -77,6 +84,7 @@ class HortalizaController extends Controller
         }else{
             $nombreImagen = '';
         }
+        $family_id = Family::where('nombre',$request->familia)->first();
 
         Hortaliza::create([
             'descripcion' => $request->descripcion,
@@ -85,7 +93,8 @@ class HortalizaController extends Controller
             'epoca_siembra' => $request->epoca_siembra,
             'tiempo_germ' => $request->tiempo_germ,
             'riego' => $request->riego,
-            'familia' => $request->familia,
+            'sembrado' => 0,
+            'family_id' => $family_id->id,
             'temperatura_hsol' => $request->temperatura_hsol,
             'separacion' => $request->separacion,
             'abonos' => $request->abonos,
@@ -132,6 +141,8 @@ class HortalizaController extends Controller
             'asociaciones' => 'required|max:100',
         ]);
 
+        $family_id = Family::where('nombre',$request->familia)->first();
+        
         $hortaliza = Hortaliza::find($hortaliza->id);
 
         $hortaliza->descripcion = $request->descripcion;
@@ -139,7 +150,7 @@ class HortalizaController extends Controller
         $hortaliza->epoca_siembra = $request->epoca_siembra;
         $hortaliza->tiempo_germ = $request->tiempo_germ;
         $hortaliza->riego = $request->riego;
-        $hortaliza->familia = $request->familia;
+        $hortaliza->family_id = $family_id->id;
         $hortaliza->temperatura_hsol = $request->temperatura_hsol;
         $hortaliza->separacion = $request->separacion;
         $hortaliza->abonos = $request->abonos;

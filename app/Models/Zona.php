@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Family extends Model
+class Zona extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'descripcion',
-        'nombre',
-        'necesidades',
-    ]; 
+        'lugar',
+    ];
 
     public function hortalizas(){
         return $this->hasMany(Hortaliza::class);

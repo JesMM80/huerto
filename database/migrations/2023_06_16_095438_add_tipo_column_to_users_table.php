@@ -11,20 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siembras', function (Blueprint $table) {
-            $table->id();
-            $table->date('fecha');
-            $table->integer('cantidad');
-            $table->foreignId('hortaliza_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('tipo')->after('name');
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('siembras');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('tipo');
+        });
     }
 };

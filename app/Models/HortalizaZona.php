@@ -2,20 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Siembra extends Model
+class HortalizaZona extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'fecha', 
-        'cantidad', 
-        'hortaliza_id'
+        'hortaliza_id',
+        'zona_id',
     ];
-
+    
     public function hortaliza(){
         return $this->belongsTo(Hortaliza::class);
+    }
+    public function zona(){
+        return $this->belongsTo(Zona::class);
     }
 }
