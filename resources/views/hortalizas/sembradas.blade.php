@@ -5,7 +5,6 @@
 @endsection
 
 @section('contenido')
-    <x-busqueda-hortaliza />
 
     <div class="w-full bg-slate-100 border-b border-gray-500">
         <nav class="mb-1 grid grid-cols-4 gap-6 text-center">
@@ -23,7 +22,7 @@
             </a>
         </nav>
     </div>
-
+    <livewire:filtrar-vacantes />
     <livewire:hortalizas-sembradas />
 
 @endsection

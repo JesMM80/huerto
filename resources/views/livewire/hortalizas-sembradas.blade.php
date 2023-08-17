@@ -1,5 +1,5 @@
 <div>
-    <div class="w-full grid grid-cols-3 text-center p-2 bg-green-500">
+    <div class="w-full grid grid-cols-3 text-center p-1 bg-green-300">
         <div>
             Hortaliza
         </div>
