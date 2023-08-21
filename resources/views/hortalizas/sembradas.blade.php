@@ -22,7 +22,7 @@
             </a>
         </nav>
     </div>
-    <livewire:filtrar-vacantes />
+
     <livewire:hortalizas-sembradas />
 
 @endsection

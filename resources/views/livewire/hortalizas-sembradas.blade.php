@@ -1,4 +1,6 @@
 <div>
+    <livewire:filtrar-vacantes />
+    
     <div class="w-full grid grid-cols-3 text-center p-1 bg-green-300">
         <div>
             Hortaliza
