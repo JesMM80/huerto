@@ -38,10 +38,18 @@
             </div>
             <div class="w-full">
                 <p class="text-lg font-bold">
-                    Descripción: {{$zona->hortaliza->descripcion}}
+                    @if($zona->hortaliza)
+                        Descripción: {{$zona->hortaliza->descripcion}}
+                    @else
+                        <p>Sin datos.</p>
+                    @endif                    
                 </p>
                 <p class="text-sm">
-                    Variedad: {{$zona->hortaliza->variedad}}
+                    @if($zona->hortaliza)
+                        Variedad: {{$zona->hortaliza->variedad}}
+                    @else
+                        <p>Sin datos.</p>
+                    @endif                   
                 </p>
             </div>
         </div>
@@ -54,7 +62,11 @@
             </a>
 
             {{-- <x-bt-borra-hortaliza-zona :zona="$zona" /> --}}
-            <x-bt-borra-hortaliza-zona :zona="$zona->hortaliza->created_at" :id="$zona->id"  />
+            @if($zona->hortaliza)
+                <x-bt-borra-hortaliza-zona :zona="$zona->hortaliza->created_at" :id="$zona->id"  />
+            @else
+                <p>Sin datos.</p>
+            @endif 
                 
             {{-- <x-bt-borra-hortaliza-zona>
                 {{$zona->hortaliza->variedad}}

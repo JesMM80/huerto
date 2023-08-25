@@ -10,6 +10,7 @@ use App\Http\Controllers\SiembraController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\HortalizaController;
 use App\Http\Controllers\HortalizaSembradaController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,10 @@ Route::delete('zonas/{id}',[ZonaController::class,'destroy'])->name('zonas.destr
 Route::get('/riegos',[RiegosController::class,'index'])->name('riegos.index');
 Route::get('riegos/create',[RiegosController::class,'create'])->name('riegos.create');
 Route::get('riegos/edit/{id}',[RiegosController::class,'edit'])->name('riegos.edit');
+
+Route::get('/users',[UserController::class,'index'])->middleware('auth')->name('user.index');
+Route::delete('/users/{id}',[UserController::class,'destroy'])->name('user.destroy');
+Route::get('/users/edit/{id}',[UserController::class,'edit'])->name('user.edit');
+Route::put('/users/{usuario}',[UserController::class,'update'])->name('user.update');
+Route::get('/users/create',[UserController::class,'create'])->middleware('auth')->name('user.create');
+Route::post('/users',[UserController::class,'store'])->name('user.store');

@@ -20,6 +20,9 @@
             <a href="{{ route('riegos.index') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
                 Riegos
             </a>            
+            <a href="{{route('user.index')}}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-200 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                Usuarios
+            </a>            
         @endif
 
         @if (auth()->user()->name == 'Jesus')
