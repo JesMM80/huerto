@@ -20,6 +20,15 @@ class UserController extends Controller
         return view('usuarios.index2');
     }
 
+    public function listadmin(){
+
+        $usuarios = User::where('tipo','=',1)
+                    ->where('name','LIKE','%%')
+                    ->get();
+
+        return view('usuarios.listadmin',['usuarios' => $usuarios]);
+    }
+
     public function destroy(User $id){
         $id->delete();
 

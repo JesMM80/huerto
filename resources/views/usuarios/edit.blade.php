@@ -3,6 +3,9 @@
 @section('titulo','Edit Usuarios (No livewire)')
     
 @section('contenido')
+
+    <x-menu-usuario />
+    
     <div class="relative sm:flex sm:justify-center bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-100 selection:bg-red-500 selection:text-white">
             
         <div class="max-w-7xl mx-auto p-1 lg:p-1 w-2/3 mt-5 mb-5">

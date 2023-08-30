@@ -5,16 +5,9 @@
 @endsection
 
 @section('contenido')
-    <div class="w-full bg-slate-100 border-b border-gray-500">
-        <nav class="mb-1">
-            <a href="{{ route('user.create') }}" class="px-2 py-1 border border-green-700 bg-green-200 rounded hover:bg-green-300">
-                Insertar usuario
-            </a>
-            <a href="{{ route('user.index') }}" class="px-2 py-1 border border-green-700 bg-green-200 rounded hover:bg-green-300">
-                Listar usuarios
-            </a>
-        </nav>
-    </div>
+    
+    <x-menu-usuario />
+    
     <div class="w-full bg-green-100 border border-gray-500 grid grid-cols-3">
         @foreach ($usuarios as $usuario)
             <div class=" w-full hover:bg-green-300 col-span-2 grid grid-cols-3">

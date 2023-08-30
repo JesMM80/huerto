@@ -71,3 +71,4 @@ Route::get('/users/edit/{id}',[UserController::class,'edit'])->name('user.edit')
 Route::put('/users/{usuario}',[UserController::class,'update'])->name('user.update');
 Route::get('/users/create',[UserController::class,'create'])->middleware('auth')->name('user.create');
 Route::post('/users',[UserController::class,'store'])->name('user.store');
+Route::get('/users/listado/admin',[UserController::class,'listadmin'])->name('user.listadmin');
