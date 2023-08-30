@@ -65,6 +65,7 @@ Route::get('riegos/create',[RiegosController::class,'create'])->name('riegos.cre
 Route::get('riegos/edit/{id}',[RiegosController::class,'edit'])->name('riegos.edit');
 
 Route::get('/users',[UserController::class,'index'])->middleware('auth')->name('user.index');
+Route::get('/users/listadolw',[UserController::class,'index2'])->middleware('auth')->name('user.index2');
 Route::delete('/users/{id}',[UserController::class,'destroy'])->name('user.destroy');
 Route::get('/users/edit/{id}',[UserController::class,'edit'])->name('user.edit');
 Route::put('/users/{usuario}',[UserController::class,'update'])->name('user.update');

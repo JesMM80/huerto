@@ -6,6 +6,7 @@
         <title>AppHuerto</title>
         @vite('resources/css/app.css')
         @livewireStyles
+        @stack('styles')
     </head>
     
     <body class="antialiased">

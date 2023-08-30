@@ -15,6 +15,11 @@ class UserController extends Controller
         return view('usuarios.index',['usuarios' => $usuarios]);
     }
 
+    public function index2(){
+
+        return view('usuarios.index2');
+    }
+
     public function destroy(User $id){
         $id->delete();
 
