@@ -24,6 +24,10 @@
         <main class="container mx-auto mt-5">
             <h2 class="text-center font-black text-2xl mb-5">@yield('titulo')</h2>
             @yield('contenido')
+
+            @isset($principal)
+                <x-vista-principal />
+            @endisset
         </main>
 
         <footer class="mt-5 text-center p-4 text-gray-500 font-bold">

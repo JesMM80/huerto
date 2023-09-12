@@ -196,10 +196,18 @@
                         @if ($hortaliza->imagen == '')
                             <img src="{{ asset("images/logo_huerto.svg") }}" alt="hortaliza" class="h-28 w w-28 ">
                         @else
-                            <img src="{{ asset("uploads") ."/". $hortaliza->imagen }}" 
+                            @if (Str::startsWith($hortaliza->imagen, 'http'))
+                                <img src="{{ $hortaliza->imagen }}" 
+                                alt="hortaliza" 
+                                class=" w-80 h-80 mt-5 border-4">                                    
+                            @else
+                                <img src="{{ asset("uploads") ."/". $hortaliza->imagen }}" 
                                 alt="hortaliza" 
                                 class=" w-80 h-80 mt-5 border-4">
+                            @endif
                         @endif
+
+
 
                     </div>
                     

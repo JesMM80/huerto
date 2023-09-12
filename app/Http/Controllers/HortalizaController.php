@@ -17,16 +17,7 @@ class HortalizaController extends Controller
     }
 
     public function index(){
-
-        $hortalizas = Hortaliza::orderBy('descripcion', 'asc')->paginate(15);
-        // $hortalizas = Hortaliza::all();
-        // $hortalizas = DB::table('hortalizas')->get();
-        // $hortalizas = Hortaliza::hydrate($hortalizas->toArray());
-        // dd($hortalizas);
-        // foreach ($hortalizas as $hortaliza) {
-        //     echo $hortaliza->descripcion.'<br>';
-        // }
-        return view('hortalizas.hortalizas',['hortalizas' => $hortalizas]);
+        return view('hortalizas.hortalizas');
     }
 
     public function create(){

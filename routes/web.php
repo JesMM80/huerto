@@ -34,7 +34,10 @@ Route::get('/register',[RegisterController::class,'create'])->name('register.cre
 Route::post('/register',[RegisterController::class,'store'])->name('register.store');
 
 Route::get('/principal',function(){
-    return view('principal');
+    
+    $principal = 1;
+    return view('principal',['principal' => $principal]);
+
 })->name('principal');
 
 Route::get('/familias',[FamilyController::class,'index'])->name('familias.index');
