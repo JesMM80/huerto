@@ -14,6 +14,8 @@ class SiembraController extends Controller
     
     public function create(){
 
+        $this->authorize('create', Siembra::class);
+
         $hortalizas = Hortaliza::all('id', 'descripcion');
 
         return view('siembra.create',['hortalizas' => $hortalizas]);

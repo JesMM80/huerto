@@ -45,6 +45,7 @@
                 </button>
             </form> --}}
             <livewire:btn-confirmacion :usuario="$usuario->id"/>
+            <livewire:bt-user-sembrar :usuario="$usuario" />
 
             <livewire:select-user :usuario="$usuario"/>    
         </div>

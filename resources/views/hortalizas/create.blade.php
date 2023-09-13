@@ -45,7 +45,7 @@
                         type="text" 
                         name="variedad" 
                         value="{{old('variedad')}}" 
-                        placeholder="Descripción de la hortaliza">
+                        placeholder="Variedad">
                     @error('variedad')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                     @enderror
@@ -71,7 +71,7 @@
                             type="text" 
                             name="epoca_siembra" 
                             value="{{old('epoca_siembra')}}" 
-                            placeholder="Descripción de la hortaliza">
+                            placeholder="Época de siembra">
                         @error('epoca_siembra')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                         @enderror
@@ -86,7 +86,7 @@
                             type="text" 
                             name="tiempo_germ" 
                             value="{{old('tiempo_germ')}}" 
-                            placeholder="Descripción de la hortaliza">
+                            placeholder="Tiempo germinación">
                         @error('tiempo_germ')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                         @enderror
@@ -103,7 +103,7 @@
                             type="text" 
                             name="riego" 
                             value="{{old('riego')}}" 
-                            placeholder="Descripción de la hortaliza">
+                            placeholder="Cantidad de riego">
                         @error('riego')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                         @enderror
@@ -118,7 +118,7 @@
                             type="text" 
                             name="temperatura_hsol" 
                             value="{{old('temperatura_hsol')}}" 
-                            placeholder="Descripción de la hortaliza">
+                            placeholder="Horas de sol">
                         @error('temperatura_hsol')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                         @enderror
@@ -133,7 +133,7 @@
                             type="text" 
                             name="separacion" 
                             value="{{old('separacion')}}" 
-                            placeholder="Descripción de la hortaliza">
+                            placeholder="Separación">
                         @error('separacion')
                             <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                         @enderror
@@ -149,7 +149,7 @@
                         type="text" 
                         name="abonos" 
                         value="{{old('abonos')}}" 
-                        placeholder="Descripción de la hortaliza">
+                        placeholder="Abonos">
                     @error('abonos')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                     @enderror
@@ -164,7 +164,7 @@
                         type="text" 
                         name="tratamiento" 
                         value="{{old('tratamiento')}}" 
-                        placeholder="Descripción de la hortaliza">
+                        placeholder="Tratamientos">
                     @error('tratamiento')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                     @enderror
@@ -179,7 +179,7 @@
                         type="text" 
                         name="asociaciones" 
                         value="{{old('asociaciones')}}" 
-                        placeholder="Descripción de la hortaliza">
+                        placeholder="Asociaciones">
                     @error('asociaciones')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
                     @enderror

@@ -56,7 +56,7 @@ Route::post('/hortalizas',[HortalizaController::class,'store'])->name('hortaliza
 Route::get('/siembra',[SiembraController::class,'create'])->name('siembra.create');
 Route::post('/siembra',[SiembraController::class,'store'])->name('siembra.store');
 
-Route::get('hortalizas/sembradas',[HortalizaSembradaController::class,'index'])->name('sembradas.index');
+Route::get('hortalizas/sembradas',[HortalizaSembradaController::class,'index'])->middleware('UserListaSiembra')->name('sembradas.index');
 
 Route::get('/zonas',[ZonaController::class,'index'])->name('zonas.index');
 Route::get('/zonas/create',[ZonaController::class,'create'])->name('zonas.create');

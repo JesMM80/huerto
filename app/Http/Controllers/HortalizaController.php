@@ -30,7 +30,7 @@ class HortalizaController extends Controller
     public function destroy(Hortaliza $id){
 
         //Eliminamos la imagen asociada a la hortaliza
-        if ($id->imagen != '') {
+        if ($id->imagen != '' && $id->imagen != Str::startsWith($id->imagen, 'http')) {
             $imagenPath = public_path('uploads/' . $id->imagen);
             unlink($imagenPath);
         }

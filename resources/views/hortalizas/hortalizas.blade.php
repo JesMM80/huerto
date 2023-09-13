@@ -12,9 +12,11 @@
             <a href="{{ route('hortalizas.create') }}" class="px-2 py-1 border border-indigo-500 bg-indigo-200 rounded hover:bg-indigo-300">
                 Insertar hortaliza
             </a>
-            <a href="{{ route('siembra.create') }}" class="px-2 py-1 border border-indigo-500 bg-indigo-200 rounded hover:bg-indigo-300">
-                Sembrar hortaliza
-            </a>
+            {{-- @if (auth()->user()->sembrar == 1) --}}
+                <a href="{{ route('siembra.create') }}" class="px-2 py-1 border border-indigo-500 bg-indigo-200 rounded hover:bg-indigo-300">
+                    Sembrar hortaliza
+                </a>
+            {{-- @endif --}}
             <a href="{{ route('hortalizas.index') }}" class="px-2 py-1 border border-indigo-500 bg-indigo-200 rounded hover:bg-indigo-300">
                 Listar hortalizas
             </a>

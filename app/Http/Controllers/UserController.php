@@ -75,7 +75,8 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'tipo' => $request->tipo
+            'tipo' => $request->tipo,
+            'sembrar' => 0,
         ]);
 
         return to_route('user.create')->with('message','Usuario guardado correctamente!');

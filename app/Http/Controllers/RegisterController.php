@@ -13,6 +13,7 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
+
         $request->validate([
             'name' => 'required|min:3|max:10',
             'email' => 'required|unique:users,email|email|max:50',
@@ -23,7 +24,8 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'tipo' => 0,
-            'password' => Hash::make($request->password)
+            'sembrar' => 0,
+            'password' => Hash::make($request->password),
         ]);
 
         //Iniciamos sesión en el programa
