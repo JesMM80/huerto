@@ -6,8 +6,10 @@
         <a href="{{ route('user.index2') }}" class="mr-1 px-2 py-1 border border-green-700 bg-green-200 rounded hover:bg-green-300">
             Listar usuarios
         </a>
-        <a href="{{ route('user.listadmin') }}" class="mr-1 px-2 py-1 border border-green-700 bg-green-200 rounded hover:bg-green-300">
-            Listar administradores
-        </a>
+        @if (auth()->user()->tipo == 1)
+            <a href="{{ route('user.listadmin') }}" class="mr-1 px-2 py-1 border border-green-700 bg-green-200 rounded hover:bg-green-300">
+                Listar administradores
+            </a>            
+        @endif
     </nav>
 </div>

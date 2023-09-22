@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CosechaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ZonaController;
 use App\Http\Controllers\LoginController;
@@ -75,3 +76,10 @@ Route::put('/users/{usuario}',[UserController::class,'update'])->name('user.upda
 Route::get('/users/create',[UserController::class,'create'])->middleware('auth')->name('user.create');
 Route::post('/users',[UserController::class,'store'])->name('user.store');
 Route::get('/users/listado/admin',[UserController::class,'listadmin'])->name('user.listadmin');
+
+Route::get('/cosecha',[CosechaController::class,'index'])->middleware('auth')->name('cosecha.index');
+Route::get('/cosecha/create',[CosechaController::class,'create'])->middleware('auth')->name('cosecha.create');
+Route::post('/cosecha',[CosechaController::class,'store'])->middleware('auth')->name('cosecha.store');
+Route::get('/cosecha/edit/{id}',[CosechaController::class,'edit'])->middleware('auth')->name('cosecha.edit');
+Route::get('/cosecha/editlivewire/{cosecha}',[CosechaController::class,'editLw'])->middleware('auth')->name('cosecha.editlw');
+Route::put('/cosechas/{cosechas}',[CosechaController::class,'update'])->middleware('auth')->name('cosecha.update');

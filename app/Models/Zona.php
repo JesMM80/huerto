@@ -16,4 +16,8 @@ class Zona extends Model
     public function hortalizas(){
         return $this->hasMany(Hortaliza::class);
     }
+
+    public function cosechas(){
+        return $this->hasMany(Cosecha::class);
+    }
 }

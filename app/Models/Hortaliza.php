@@ -36,4 +36,8 @@ class Hortaliza extends Model
     public function zonas(){
         return $this->hasMany(HortalizaZona::class);
     }
+
+    public function cosechas(){
+        return $this->hasMany(Cosecha::class);
+    }
 }
