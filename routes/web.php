@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbonoController;
 use App\Http\Controllers\CosechaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ZonaController;
@@ -83,3 +84,14 @@ Route::post('/cosecha',[CosechaController::class,'store'])->middleware('auth')->
 Route::get('/cosecha/edit/{id}',[CosechaController::class,'edit'])->middleware('auth')->name('cosecha.edit');
 Route::get('/cosecha/editlivewire/{cosecha}',[CosechaController::class,'editLw'])->middleware('auth')->name('cosecha.editlw');
 Route::put('/cosechas/{cosechas}',[CosechaController::class,'update'])->middleware('auth')->name('cosecha.update');
+
+Route::get('/abonos',[AbonoController::class,'index'])->middleware('auth')->name('abonos.index');
+Route::get('/abonos/create',[AbonoController::class,'create'])->middleware('auth')->name('abonos.create');
+Route::post('/abonos',[AbonoController::class,'store'])->middleware('auth')->name('abonos.store');
+Route::get('/abonos/edit/{id}',[AbonoController::class,'edit'])->middleware('auth')->name('abonos.edit');
+Route::put('/abonos/{abono}',[AbonoController::class,'update'])->middleware('auth')->name('abonos.update');
+Route::delete('/abonos/{id}',[AbonoController::class,'destroy'])->middleware('auth')->name('abonos.destroy');
+Route::get('/abonos/asociar',[AbonoController::class,'asociar'])->middleware('auth')->name('abonos.asociar');
+Route::post('/abonos/asociar',[AbonoController::class,'storeAsociacion'])->middleware('auth')->name('abonos.storeAsociacion');
+Route::get('/abonos/listado/asociados',[AbonoController::class,'listaAsociados'])->middleware('auth')->name('abonos.listaAsociados');
+Route::delete('/abonos/listado/{id}',[AbonoController::class,'destroyAsociado'])->middleware('auth')->name('abonos.destroyAsociado');

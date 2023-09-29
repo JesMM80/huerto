@@ -35,7 +35,7 @@ class EditCosecha extends Component
         $cosechanew->zona_id = $this->zona;
         $cosechanew->save();
 
-        return to_route('cosecha.index')->with('message','Cosecha guardada correctamente!');
+        return back()->with(session()->flash('message','Cosecha guardada correctamente!'));
     }
 
     public function render()

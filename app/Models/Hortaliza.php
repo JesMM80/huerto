@@ -40,4 +40,8 @@ class Hortaliza extends Model
     public function cosechas(){
         return $this->hasMany(Cosecha::class);
     }
+
+    public function abonos(){
+        return $this->belongsToMany(Abono::class);
+    }
 }
